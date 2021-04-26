@@ -1,8 +1,3 @@
-
-
-
-
-
 starting redis: sudo service redis-server start
 restarting redis: sudo service redis-server restart
 
@@ -31,3 +26,15 @@ EXPIRE keyname seconds --> seconds is no of seconds for a key to live
 TTL keyname gives how much faraway a key to expire
 to setup expiry and value ina single line - SETEX keyname duration(seconds) value
 to remove expiry PERSIST keyname
+
+
+
+
+Persistence:
+persistence can be achieved by 2 ways.
+1. snapshotting (default) --> becomes inefficient when the application is write intensive
+2. Append only file(AOF) --> appending the write operations to the aof file.(durable).
+
+
+snapshots:
+saves into a rdb file(by default)
